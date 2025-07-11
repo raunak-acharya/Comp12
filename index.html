@@ -613,6 +613,67 @@
     <li>Enforcing constraints to maintain data integrity.</li>
   </ul>
 
+<h2>SQL Code Example with Database and Multiple Insertions</h2>
+  <pre><code>
+Create the table
+CREATE TABLE students (
+  Id INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Class VARCHAR(20),
+  Marks INT
+);
+<img src="1.png">
+Insert records into the table
+INSERT INTO students (id, name, class, marks) VALUES (6, 'Ramesh', 'X', 88);
+INSERT INTO students (id, name, class, marks) VALUES (7, 'Anita', 'XII', 72);
+INSERT INTO students (id, name, class, marks) VALUES (8, 'Deepak', 'IX', 64);
+INSERT INTO students (id, name, class, marks) VALUES (9, 'Manisha', 'X', 91);
+INSERT INTO students (id, name, class, marks) VALUES (10, 'Kiran', 'XII', 79);
+<img src="2.png">
+Display all records
+SELECT * FROM students;
+<img src="3.png">
+Update marks of student named 'Anita'
+UPDATE students SET Marks = 85 WHERE Name = 'Anita';
+<img src="4.png">
+Delete record of student with id = 3
+DELETE FROM students WHERE id = 3;
+<img src="5.png">
+</code></pre>
+<h1>Definitions</h1>
+<h2>INSERT</h2>
+    <p>The <strong>INSERT</strong> command in SQL is used to add new rows of data into a table. It specifies that you're inserting new records, rather than updating or querying existing data. It must be followed by the target table name and the values to be inserted.</p>
+  </div>
+
+  <div class="term">
+    <h2>INTO</h2>
+    <p>The keyword <strong>INTO</strong> is used in conjunction with the <code>INSERT</code> statement to indicate the table into which the new data will be inserted. It is a required part of the syntax for an <code>INSERT</code> operation.</p>
+  </div>
+
+  <div class="term">
+    <h2>VALUES</h2>
+    <p><strong>VALUES</strong> is the clause used in an <code>INSERT</code> statement to specify the actual data that should be inserted into each column of the table. The order and number of values must match the columns being targeted.</p>
+  </div>
+
+  <div class="term">
+    <h2>id</h2>
+    <p><strong>id</strong> typically stands for "identifier" and is a unique value used to distinguish each row in a table. It is often an integer and is commonly defined as a primary key to ensure that each record is uniquely identifiable.</p>
+  </div>
+
+  <div class="term">
+    <h2>name</h2>
+    <p>The <strong>name</strong> column usually stores the full name of a person, student, or entity. In a student database, it refers to the student's name, stored as a text or string value.</p>
+  </div>
+
+  <div class="term">
+    <h2>class</h2>
+    <p>The <strong>class</strong> column stores the grade or academic level of a student. It typically holds values like 'X', 'XI', or 'XII' to represent 10th, 11th, or 12th grades respectively, and is usually stored as a string or varchar.</p>
+  </div>
+
+  <div class="term">
+    <h2>marks</h2>
+    <p><strong>marks</strong> refer to the numeric scores or grades a student has achieved, typically in a subject or overall assessment. This column usually holds integer values and is used to evaluate student performance.</p>
+  </div>
     </body>
 
 </html>
