@@ -674,6 +674,185 @@ DELETE FROM students WHERE id = 3;
     <h2>marks</h2>
     <p><strong>marks</strong> refer to the numeric scores or grades a student has achieved, typically in a subject or overall assessment. This column usually holds integer values and is used to evaluate student performance.</p>
   </div>
-    </body>
+
+<h1>Unit 2 – C Programming</h1> <ol> <li> <strong>Understanding Functions:</strong> <ol type="a"> <li><strong>Function Definition:</strong> A function is a reusable block of code designed to carry out a specific task.</li> <li><strong>Function Syntax:</strong><br> <code>return_type function_name(parameters) { // code }</code> </li> <li><strong>Function Types:</strong><br> - <strong>Library Functions:</strong> Built-in functions such as <code>printf()</code> and <code>scanf()</code><br> - <strong>User-Defined Functions:</strong> Functions created by programmers to perform custom tasks </li> <li><strong>Key Elements of a Function:</strong> <ol type="i"> <li><strong>Function Prototype:</strong> Declares the function (e.g., <code>int add(int, int);</code>)</li> <li><strong>Function Call:</strong> Executes the function (e.g., <code>add(2, 3);</code>)</li> <li><strong>Function Definition:</strong> The actual code of the function (e.g., <code>int add(int a, int b) { return a + b; }</code>)</li> <li><strong>Return Type:</strong> Indicates the data type the function returns (e.g., <code>int</code>, <code>void</code>)</li> </ol> </li> </ol> </li> <li> <strong>Function Categories with Examples:</strong> <ol type="i"> <li><strong>Functions with a return type but without parameters:</strong>
+    #include <stdio.h>
+<code>
+int Value() {
+  printf("Inside value()\n");
+  int value = 662;
+  return value;
+}
+
+int main() {
+  printf("Value()\n");
+  int result = Value();
+  printf("The value is: %d\n", result);
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+     <li><strong>Function with return type with arguments:</strong>
+    /code></pre>
+        </li>
+         <img src="11.png">
+        <li><strong>Function with return type with arguments:</strong>
+          <pre><code>#include <stdio.h>
+
+int subtract(int a, int b) {
+  printf("Subtracting %d from %d...\n", b, a);
+  int difference = a - b;
+  return difference;
+}
+
+int main() {
+  int x = 15, y = 8;
+  printf("Calling subtract(%d, %d)...\n", x, y);
+  int result = subtract(x, y);
+  printf("Difference: %d\n", result);
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+</code></pre>
+        </li><img src="22.png">
+        <li><strong>Function with no return type with no arguments:</strong>
+          <pre><code>#include <stdio.h>
+
+void greet() {
+  printf("Good Morning!\n");
+  printf("Have a great day!\n");
+}
+
+int main() {
+  printf("Calling greet()...\n");
+  greet();
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+</code></pre>
+        </li>         <img src="33.png">
+        <li><strong>Function with no return type with arguments:</strong>
+          <pre><code>#include <stdio.h>
+
+void displayProduct(int x, int y) {
+  int product = x * y;
+  printf("Calculating product of %d and %d...\n", x, y);
+  printf("The product is: %d\n", product);
+}
+
+int main() {
+  int a = 7, b = 5;
+  printf("Calling displayProduct(%d, %d)...\n", a, b);
+  displayProduct(a, b);
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+</code></pre>
+        </li>
+      </ol>
+    </li>
+         <img src="44.png">
+    <li>
+      <strong>Storage classes:</strong>
+      <p>In the C programming language, *storage classes* are essential constructs that define two main attributes of variables and functions: their **scope**, which refers to where in the program they are accessible, and their **lifetime**, which refers to how long they exist in memory during program execution. C provides four distinct types of storage classes, each serving a specific purpose in managing how variables behave and how efficiently they are used in different contexts. These storage classes are as follows:</p> <ul> <li><strong>Automatic Storage Class:</strong> This is the default storage class assigned to all local variables that are declared within functions or code blocks (such as within loops or conditional statements). These variables are automatically created when the block is entered and destroyed once the block is exited. The keyword <code>auto</code> can be used to explicitly declare them, although it is typically omitted since it is implied.</li> <li><strong>External Storage Class:</strong> Also known as global scope, this storage class is used when a variable is declared outside of all functions and is intended to be accessed by multiple functions, or even across different source files in a multi-file program. The keyword <code>extern</code> is used to indicate that the variable is defined in another file, allowing shared access and promoting modular programming.</li> <li><strong>Register Storage Class:</strong> This type is used when you want to store a variable in one of the processor’s registers instead of RAM, offering significantly faster access times. This is particularly useful for variables that are used frequently, such as loop counters. Declaring a variable with the <code>register</code> keyword serves as a request to the compiler, which may or may not honor it depending on the hardware and optimization constraints.</li> <li><strong>Static Storage Class:</strong> The <code>static</code> keyword is used to declare variables whose value persists across multiple function calls. In other words, instead of being destroyed and reinitialized each time a function is invoked, static variables maintain their previous value. This storage class can also be used for functions and variables with internal linkage, limiting their visibility to the same source file.</li> </ul> <p>Understanding these storage classes is crucial for writing efficient, modular, and maintainable C programs. Each one plays a unique role in controlling how data is stored and accessed throughout the execution of a program.</p>
+      <pre><code>#include <stdio.h>
+
+int externalValue = 250;
+
+void countCalls() {
+  static int callCount = 1;
+  printf("Function called %d times\n", callCount);
+  callCount++;
+}
+
+void registerDemo() {
+  register int temp = 75;
+  printf("Register variable: %d\n", temp);
+}
+
+void autoDemo() {
+  auto int level = 3;
+  printf("Automatic level: %d\n", level);
+}
+
+int main() {
+  printf("External variable: %d\n", externalValue);
+  countCalls();
+  countCalls();
+  registerDemo();
+  autoDemo();
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+</code></pre>
+    </li>
+         <img src="55.png">
+    <li>
+      <strong>Recursive function with syntax and examples:</strong><br>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>return_type function_name(parameters) {
+  if (base_condition) {
+    return base_value;
+  } else {
+    return recursive_case;
+  }
+}</code></pre>
+      <p><strong>Example:</strong></p>
+      <pre><code>#include <stdio.h>
+
+int fibonacci(int n) {
+  if(n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+int main() {
+  int number = 7;
+  printf("Finding Fibonacci of %d...\n", number);
+  int result = fibonacci(number);
+  printf("Fibonacci number at position %d is %d\n", number, result);
+  printf("Executed by Raunak Acharya (947)\n");
+  return 0;
+}
+</code></pre>
+    </li>
+         <img src="66.png">
+    <li>
+      <strong>Demonstration of passing array to a function:</strong>
+      <p>The following program demonstrates passing an array to a function, calculating the average of the elements:</p>
+      <pre><code>#include <stdio.h>
+
+// Function to find the maximum value in an array
+int findMaximum(int arr[], int size) {
+  int max = arr[0];
+  for (int i = 1; i < size; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+int main() {
+  int numbers[] = {15, 22, 8, 35, 19};
+  int size = sizeof(numbers) / sizeof(numbers[0]);
+  
+  printf("Passing array to function...\n");
+  int maxVal = findMaximum(numbers, size);
+  printf("Maximum value = %d\n", maxVal);
+  printf("Executed by Raunak Acharya (947)\n");
+  
+  return 0;
+}
+
+}</code></pre>
+    </li>
+     <img src="77.png">      
+  </ol>
+        <strong>6. Past Year Questions of Functions (2020-2024 and Model Questions)</strong>
+</code>
+<p></p>
+</body>
 
 </html>
