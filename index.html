@@ -184,6 +184,25 @@
                     </ul>
                 </li>
             </ul>
+            <h2>Data Types in Databases</h2>
+<p><strong>Data types</strong> define the kind of value a database field can hold, ensuring data integrity and optimizing storage and performance. They are fundamental to database design, influencing how data is stored, retrieved, and manipulated.</p>
+<p>Each database system (e.g., MySQL, PostgreSQL, Oracle, SQL Server) offers a variety of data types, typically grouped into categories:</p>
+<ul>
+    <li><strong>Numeric Types:</strong> Used for storing numbers. Examples include <code>INT</code>, <code>FLOAT</code>, <code>DECIMAL</code>, and <code>BIGINT</code>.</li>
+    <li><strong>Character/String Types:</strong> Used for text data. Common types are <code>CHAR</code>, <code>VARCHAR</code>, <code>TEXT</code>, and <code>NCHAR</code>.</li>
+    <li><strong>Date and Time Types:</strong> Handle temporal data such as <code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>, and <code>TIMESTAMP</code>.</li>
+    <li><strong>Boolean Type:</strong> Represents true/false values, often stored as <code>BOOLEAN</code> or <code>BIT</code>.</li>
+    <li><strong>Binary Types:</strong> Store binary data like images or files. Examples include <code>BLOB</code> and <code>VARBINARY</code>.</li>
+    <li><strong>Spatial and JSON Types:</strong> Some modern databases support complex types like <code>GEOMETRY</code> for spatial data and <code>JSON</code> for structured documents.</li>
+</ul>
+<p>Choosing the correct data type is crucial for:</p>
+<ul>
+    <li>Ensuring accurate data representation</li>
+    <li>Reducing storage requirements</li>
+    <li>Improving query performance</li>
+    <li>Enforcing data validation and constraints</li>
+</ul>
+<p>For example, using <code>VARCHAR(255)</code> for a name field allows flexibility, while using <code>INT</code> for age ensures numeric operations are valid. Misusing data types can lead to inefficient queries or data anomalies.</p>
 
             <h2>Data Dictionary</h2>
             <p>The <strong>data dictionary</strong> is an essential metadata repository in a database system that stores definitions, constraints, and structural information about data elements and their relationships. It acts as a blueprint, documenting
