@@ -371,7 +371,29 @@
                 <li>Ensuring data integrity and compliance with regulations.</li>
             </ul>
 
-            <h2>Practical Topics: DDL and DML Languages</h2>
+            <h2>ER Diagrams</h2>
+<h3>Introduction</h3>
+<p>Entity-Relationship (ER) Diagrams are visual representations of data models that describe how entities relate to each other within a system. They are widely used in database design to map out the structure before implementation.</p>
+
+<h3>Core Concepts</h3>
+<ul>
+    <li><strong>Entity:</strong> A real-world object or concept that can be distinctly identified (e.g., Student, Course).</li>
+    <li><strong>Attributes:</strong> Properties or characteristics of an entity (e.g., Student Name, Course ID).</li>
+    <li><strong>Relationships:</strong> Associations between entities (e.g., Enrolls, Teaches).</li>
+    <li><strong>Cardinality:</strong> Specifies the number of instances of one entity that can be associated with instances of another (e.g., One-to-Many, Many-to-Many).</li>
+    <li><strong>Degree:</strong> Refers to the number of entities involved in a relationship (e.g., Binary, Ternary).</li>
+</ul>
+
+<h3>Symbols and Their Meanings</h3>
+<ul>
+    <li><strong>Rectangle:</strong> Represents an entity.</li>
+    <li><strong>Ellipse:</strong> Represents an attribute.</li>
+    <li><strong>Diamond:</strong> Represents a relationship.</li>
+    <li><strong>Lines:</strong> Connect entities to relationships and attributes.</li>
+    <li><strong>Double Ellipse:</strong> Represents multivalued attributes.</li>
+    <li><strong>Dashed Ellipse:</strong> Represents derived attributes.</li>
+</ul>
+<h2>Practical Topics: DDL and DML Languages</h2>
             <p><strong>Data Definition Language (DDL)</strong> commands are used to define and modify database structures such as tables, indexes, and schemas. Common DDL commands include <code>CREATE</code>, <code>ALTER</code>, and <code>DROP</code>.</p>
             <p><strong>Data Manipulation Language (DML)</strong> commands are used to manipulate data stored within tables. These include <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, and <code>SELECT</code>.</p>
 
@@ -397,6 +419,56 @@
                 <li><strong>DATE:</strong> Stores calendar dates (year, month, day).</li>
                 <li><strong>DATETIME:</strong> Stores date and time values.</li>
             </ul>
+<h2>SQL (DDL and DML)</h2>
+<h3>DDL (Data Definition Language)</h3>
+<ul>
+    <li><strong>CREATE:</strong> Defines a new table or database object.</li>
+    <li><strong>ALTER:</strong> Modifies an existing database object.</li>
+    <li><strong>DROP:</strong> Deletes a database object.</li>
+</ul>
+
+<h3>DML (Data Manipulation Language)</h3>
+<ul>
+    <li><strong>INSERT:</strong> Adds new records to a table.</li>
+    <li><strong>UPDATE:</strong> Modifies existing records.</li>
+    <li><strong>DELETE:</strong> Removes records from a table.</li>
+    <li><strong>SELECT:</strong> Retrieves data from one or more tables.</li>
+</ul>
+<h2>Data Constraints</h2>
+<ul>
+    <li><strong>NOT NULL:</strong> Ensures that a column cannot have a NULL value.</li>
+    <li><strong>UNIQUE:</strong> Ensures all values in a column are different.</li>
+    <li><strong>PRIMARY KEY:</strong> Uniquely identifies each record in a table and combines NOT NULL and UNIQUE.</li>
+    <li><strong>AUTO INCREMENT:</strong> Automatically generates a unique number for new records.</li>
+</ul>
+<h2>SQL Operators</h2>
+<ul>
+    <li><strong>AND:</strong> Returns records where all conditions are true.</li>
+    <li><strong>OR:</strong> Returns records where at least one condition is true.</li>
+    <li><strong>NOT:</strong> Negates a condition.</li>
+</ul>
+<h2>Where Clause</h2>
+<p>The <strong>WHERE</strong> clause filters records based on specified conditions. It is used with SELECT, UPDATE, and DELETE statements.</p>
+<pre><code>SELECT * FROM Students WHERE Age &gt; 18;</code></pre>
+<h2>Order By</h2>
+<p>The <strong>ORDER BY</strong> clause sorts the result set in ascending (ASC) or descending (DESC) order.</p>
+<pre><code>SELECT * FROM Students ORDER BY Name ASC;</code></pre>
+<h2>SQL JOINs</h2>
+<h3>Types of JOINs</h3>
+<ul>
+    <li><strong>INNER JOIN:</strong> Returns records with matching values in both tables.</li>
+    <li><strong>LEFT JOIN:</strong> Returns all records from the left table and matched records from the right table.</li>
+    <li><strong>RIGHT JOIN:</strong> Returns all records from the right table and matched records from the left table.</li>
+    <li><strong>FULL JOIN:</strong> Returns all records when there is a match in either left or right table.</li>
+</ul>
+<h3>Example</h3>
+<pre><code>
+SELECT Students.Name, Courses.Title
+FROM Students
+INNER JOIN Enrollments ON Students.ID = Enrollments.StudentID
+INNER JOIN Courses ON Enrollments.CourseID = Courses.ID;
+</code></pre>
+
         </div>
 
      <h2>1. What is a Database and What is a DBMS? What are the Advantages and Disadvantages of DBMS?</h2>
